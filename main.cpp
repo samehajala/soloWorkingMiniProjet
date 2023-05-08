@@ -30,7 +30,7 @@ int main()
     cout<<bourse.getDateCourante()<<endl ;
 
 
-    Titre t1("stf",500) ;
+    //Titre t1("stf",500) ;
     cout<<t1.getQuantite()<<endl ;
     cout<<t1.getNomAction()<<endl ;
     vector<Titre> titres ;
