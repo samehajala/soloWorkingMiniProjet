@@ -1,0 +1,115 @@
+# depslib dependency file v1.0
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
+	<iostream>
+	"Date.h"
+	"PersistancePrixJournaliers.h"
+	"PrixJournalier.h"
+	"BourseVector.h"
+	"Transaction.h"
+	"TraderAleatoire.h"
+	<string>
+	"Titre.h"
+	<ctime>
+	"Simulation.h"
+	<chrono>
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\date.cpp
+	<iostream>
+	<string>
+	"Date.h"
+	<fstream>
+	<sstream>
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\date.h
+	<iostream>
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\portefeuille.cpp
+	"PorteFeuille.h"
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\portefeuille.h
+	"Titre.h"
+	<vector>
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\titre.h
+	<string>
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\titre.cpp
+	"Titre.h"
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\bourse.cpp
+	"Bourse.h"
+
+1683567650 c:\users\lenovo\documents\miniprojetbourse\bourse.h
+	"PrixJournalier.h"
+	"PersistancePrixJournaliers.h"
+	<vector>
+	<string>
+	"Date.h"
+
+1683568782 c:\users\lenovo\documents\miniprojetbourse\prixjournalier.h
+	"Date.h"
+	"string"
+	<vector>
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\persistanceprixjournaliers.h
+	<vector>
+	<fstream>
+	"PrixJournalier.h"
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\boursevector.cpp
+	<iostream>
+	<string>
+	<vector>
+	"BourseVector.h"
+	<fstream>
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\boursevector.h
+	<vector>
+	<string>
+	"Bourse.h"
+
+1683568208 c:\users\lenovo\documents\miniprojetbourse\transaction.h
+	<string>
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\traderaleatoire.h
+	"Trader.h"
+
+1683568416 c:\users\lenovo\documents\miniprojetbourse\trader.h
+	"Bourse.h"
+	"PorteFeuille.h"
+	"Transaction.h"
+
+1683568209 c:\users\lenovo\documents\miniprojetbourse\simulation.h
+	"TraderAleatoire.h"
+	<map>
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\persistanceprixjournaliers.cpp
+	"PersistancePrixJournaliers.h"
+	"Date.h"
+	<vector>
+	<iostream>
+	<fstream>
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\prixjournalier.cpp
+	<iostream>
+	"Date.h"
+	"prixJournalier.h"
+	<string>
+	<vector>
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\simulation.cpp
+	"Simulation.h"
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\trader.cpp
+	"Trader.h"
+
+1683568674 source:c:\users\lenovo\documents\miniprojetbourse\traderaleatoire.cpp
+	"TraderAleatoire.h"
+	<vector>
+	<cstdlib>
+	<ctime>
+	<string>
+
+1683568672 source:c:\users\lenovo\documents\miniprojetbourse\transaction.cpp
+	"Transaction.h"
+
