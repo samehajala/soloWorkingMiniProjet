@@ -3,7 +3,7 @@
 #include"PersistancePrixJournaliers.h"
 #include"PrixJournalier.h"
 #include"BourseVector.h"
-
+#include<map>
 #include"Transaction.h"
 #include"TraderAleatoire.h"
 #include<string>
@@ -11,6 +11,7 @@
 #include <ctime>
 #include"BourseSet.h"
 #include"Simulation.h"
+#include"BourseMultiMap.h"
 #include<chrono>
 #include<set>
 using namespace std;
@@ -28,30 +29,31 @@ int main()
     {
         prixJourSet.insert(*pj) ;
     }
-
-
+    multimap<Date,PrixJournalier>  prixJourMultiMap ;
+    for(auto pj=prixJour.begin();pj!=prixJour.end();++pj )
+    {
+        prixJourMultiMap.insert(make_pair(pj->getDate(),*pj)) ;
+    }
+    cout<<"je doit etre le"<<prixJourSet.size()<<endl;
     Date d1(6,1,2010);
-
      BourseVector bourse(d1,prixJour) ;
      BourseSet bourseset(d1,prixJourSet) ;
+     BourseMultiMap bourseMultiMap(d1,prixJourMultiMap) ;
     cout<<bourse.getDateCourante()<<endl ;
-
-
     Titre t1("stf",500) ;
     cout<<t1.getQuantite()<<endl ;
     cout<<t1.getNomAction()<<endl ;
     vector<Titre> titres ;
     titres.push_back(t1) ;
     PorteFeuille p ;
-
     TraderAleatoire TA ;
     Transaction tx ;
-
     Simulation maSimulation ;
-
-    Date d3(26,3,2015) ;
+    Date d3(26,3,2010) ;
     map<string,long> statistiquesSimulation ;
     statistiquesSimulation=Simulation::executer(bourseset,TA,d1,d3,10000) ;
+    statistiquesSimulation=Simulation::executer(bourse,TA,d1,d3,100000) ;
+    statistiquesSimulation=Simulation::executer(bourseMultiMap,TA,d1,d3,100000) ;
     /*cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
     cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
     cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683717860 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
+1683720505 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
 	<iostream>
 	"Date.h"
 	"PersistancePrixJournaliers.h"
@@ -92,7 +92,7 @@
 	<iostream>
 	<fstream>
 
-1683717712 source:c:\users\lenovo\documents\miniprojetbourse\prixjournalier.cpp
+1683719630 source:c:\users\lenovo\documents\miniprojetbourse\prixjournalier.cpp
 	<iostream>
 	"Date.h"
 	"prixJournalier.h"
@@ -115,12 +115,20 @@
 1683568672 source:c:\users\lenovo\documents\miniprojetbourse\transaction.cpp
 	"Transaction.h"
 
-1683699304 source:c:\users\lenovo\documents\miniprojetbourse\bourseset.cpp
+1683754740 source:c:\users\lenovo\documents\miniprojetbourse\bourseset.cpp
 	"BourseSet.h"
+	<bits/stdc++.h>
 
 1683698661 c:\users\lenovo\documents\miniprojetbourse\bourseset.h
 	<set>
 	<vector>
 	<string>
 	"Bourse.h"
+
+1683754604 source:c:\users\lenovo\documents\miniprojetbourse\boursemultimap.cpp
+	"BourseMultiMap.h"
+
+1683721437 c:\users\lenovo\documents\miniprojetbourse\boursemultimap.h
+	"Bourse.h"
+	<map>
 

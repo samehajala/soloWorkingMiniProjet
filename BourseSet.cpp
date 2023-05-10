@@ -1,6 +1,8 @@
 #include"BourseSet.h"
+#include <bits/stdc++.h>
 vector<string> BourseSet::getActionsDisponibleParDate(const Date& dateEntree) const {
     vector<string> actions;
+
     if(dateEntree>dateDuJour)
     {
         return actions ;
