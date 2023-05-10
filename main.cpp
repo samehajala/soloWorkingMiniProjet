@@ -9,8 +9,10 @@
 #include<string>
 #include"Titre.h"
 #include <ctime>
+#include"BourseSet.h"
 #include"Simulation.h"
 #include<chrono>
+#include<set>
 using namespace std;
 
 int main()
@@ -21,16 +23,21 @@ int main()
     vector<PrixJournalier> prixJour ;
     prixJour=pers.lirePrixJournaliersDUnFichier("prices.csv") ;
     cout<<"La taille de votre fichier csv est:\t"<<prixJour.size()<<endl ;
+    set<PrixJournalier> prixJourSet;
+    for(auto pj=prixJour.begin();pj!=prixJour.end();++pj)
+    {
+        prixJourSet.insert(*pj) ;
+    }
 
 
     Date d1(6,1,2010);
 
      BourseVector bourse(d1,prixJour) ;
-
+     BourseSet bourseset(d1,prixJourSet) ;
     cout<<bourse.getDateCourante()<<endl ;
 
 
-    //Titre t1("stf",500) ;
+    Titre t1("stf",500) ;
     cout<<t1.getQuantite()<<endl ;
     cout<<t1.getNomAction()<<endl ;
     vector<Titre> titres ;
@@ -42,9 +49,9 @@ int main()
 
     Simulation maSimulation ;
 
-    Date d3(26,3,2010) ;
+    Date d3(26,3,2015) ;
     map<string,long> statistiquesSimulation ;
-    statistiquesSimulation=Simulation::executer(bourse,TA,d1,d3,10000) ;
+    statistiquesSimulation=Simulation::executer(bourseset,TA,d1,d3,10000) ;
     /*cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
     cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
     cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;

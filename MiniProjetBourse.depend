@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683568674 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
+1683717860 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
 	<iostream>
 	"Date.h"
 	"PersistancePrixJournaliers.h"
@@ -10,8 +10,10 @@
 	<string>
 	"Titre.h"
 	<ctime>
+	"BourseSet.h"
 	"Simulation.h"
 	<chrono>
+	<set>
 
 1683568674 source:c:\users\lenovo\documents\miniprojetbourse\date.cpp
 	<iostream>
@@ -46,7 +48,7 @@
 	<string>
 	"Date.h"
 
-1683568782 c:\users\lenovo\documents\miniprojetbourse\prixjournalier.h
+1683717701 c:\users\lenovo\documents\miniprojetbourse\prixjournalier.h
 	"Date.h"
 	"string"
 	<vector>
@@ -63,7 +65,7 @@
 	"BourseVector.h"
 	<fstream>
 
-1683568209 c:\users\lenovo\documents\miniprojetbourse\boursevector.h
+1683718124 c:\users\lenovo\documents\miniprojetbourse\boursevector.h
 	<vector>
 	<string>
 	"Bourse.h"
@@ -90,7 +92,7 @@
 	<iostream>
 	<fstream>
 
-1683568674 source:c:\users\lenovo\documents\miniprojetbourse\prixjournalier.cpp
+1683717712 source:c:\users\lenovo\documents\miniprojetbourse\prixjournalier.cpp
 	<iostream>
 	"Date.h"
 	"prixJournalier.h"
@@ -112,4 +114,13 @@
 
 1683568672 source:c:\users\lenovo\documents\miniprojetbourse\transaction.cpp
 	"Transaction.h"
+
+1683699304 source:c:\users\lenovo\documents\miniprojetbourse\bourseset.cpp
+	"BourseSet.h"
+
+1683698661 c:\users\lenovo\documents\miniprojetbourse\bourseset.h
+	<set>
+	<vector>
+	<string>
+	"Bourse.h"
 
