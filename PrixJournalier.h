@@ -12,6 +12,7 @@ private:
 
 public:
     PrixJournalier(){}
+    PrixJournalier(Date journee):date(journee) {}
     PrixJournalier(Date,string,float);
     Date getDate() const  ;
     float getPrix() const  ;

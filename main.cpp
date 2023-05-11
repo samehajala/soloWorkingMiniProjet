@@ -49,7 +49,7 @@ int main()
     TraderAleatoire TA ;
     Transaction tx ;
     Simulation maSimulation ;
-    Date d3(26,3,2010) ;
+    Date d3(26,1,2010) ;
     map<string,long> statistiquesSimulation ;
     statistiquesSimulation=Simulation::executer(bourseset,TA,d1,d3,10000) ;
     statistiquesSimulation=Simulation::executer(bourse,TA,d1,d3,100000) ;
