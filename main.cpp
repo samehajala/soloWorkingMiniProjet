@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
     auto tStart = chrono::high_resolution_clock::now();
-    srand(time(nullptr));
+    srand(1);//time(nullptr)
      PersistancePrixJournaliers pers ;
     vector<PrixJournalier> prixJour ;
     prixJour=pers.lirePrixJournaliersDUnFichier("prices.csv") ;
@@ -49,17 +49,43 @@ int main()
     TraderAleatoire TA ;
     Transaction tx ;
     Simulation maSimulation ;
-    Date d3(26,1,2010) ;
+    Date d3(1,1,2011) ;
     map<string,long> statistiquesSimulation ;
-    statistiquesSimulation=Simulation::executer(bourseset,TA,d1,d3,10000) ;
-    statistiquesSimulation=Simulation::executer(bourse,TA,d1,d3,100000) ;
-    statistiquesSimulation=Simulation::executer(bourseMultiMap,TA,d1,d3,100000) ;
-    /*cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
+    int choix ;
+    cout<<"entrer votre choix de Bourse  "<< endl ;
+    cin>>choix ;
+    if(choix==1)
+        {
+            statistiquesSimulation=Simulation::executer(bourseset,TA,d1,d3,100000) ;
+            cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
     cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
     cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;
     cout<<"Le nombre des actions qui ont echouees est:\t"<<statistiquesSimulation["NombreDesTransactionEchouees"]<<endl ;
     cout<<"Le nombre des actions Vendre est:\t"<<statistiquesSimulation["NombreDesTransactionVendre"]<<endl ;
-    cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;*/
+    cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;
+    }
+    else if (choix==2)
+    {
+        statistiquesSimulation=Simulation::executer(bourse,TA,d1,d3,100000) ;
+        cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
+    cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
+    cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;
+    cout<<"Le nombre des actions qui ont echouees est:\t"<<statistiquesSimulation["NombreDesTransactionEchouees"]<<endl ;
+    cout<<"Le nombre des actions Vendre est:\t"<<statistiquesSimulation["NombreDesTransactionVendre"]<<endl ;
+    cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;
+    }
+    else
+    {
+        statistiquesSimulation=Simulation::executer(bourseMultiMap,TA,d1,d3,100000) ;
+        cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
+        cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
+        cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;
+        cout<<"Le nombre des actions qui ont echouees est:\t"<<statistiquesSimulation["NombreDesTransactionEchouees"]<<endl ;
+        cout<<"Le nombre des actions Vendre est:\t"<<statistiquesSimulation["NombreDesTransactionVendre"]<<endl ;
+        cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;
+    }
+
+
 
     auto tEnd = chrono::high_resolution_clock::now();
     double temps_ecoule = chrono::duration<double, milli>(tEnd - tStart).count();

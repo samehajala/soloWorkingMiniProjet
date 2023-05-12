@@ -35,6 +35,7 @@ vector<string> BourseSet::getActionsDisponibleParDate(const Date& dateEntree) co
 
     return actions;
 }*/
+
 vector<PrixJournalier> BourseSet::getPrixJournalierParDate(const Date& dateEntree) const  {
     vector<PrixJournalier> prixJournaliers;
    if(dateEntree > dateDuJour) {
@@ -64,6 +65,22 @@ vector<PrixJournalier> BourseSet::getPrixJournalierParDate(const Date& dateEntre
     }
     return prixJournaliers;
 }*/
+
+float BourseSet::getPrixJournalierParDatePourUneAction(const Date& dateEntree, const string& nomAction) const {
+    float prixU = 0.0;
+    if (dateEntree > dateDuJour) {
+        return prixU;
+    }
+    auto range = Historique.equal_range(PrixJournalier(dateEntree,nomAction));
+    for (auto it = range.first; it != range.second; ++it) {
+        if (it->getNomAction() == nomAction && it->getDate() == dateEntree) {
+            prixU = it->getPrix();
+            break;
+        }
+    }
+    return prixU;
+}
+/*
 float BourseSet::getPrixJournalierParDatePourUneAction(const Date& dateEntree ,const string& nomAction  ) const
 {
     float PrixU=0.0;
@@ -87,9 +104,6 @@ float BourseSet::getPrixJournalierParDatePourUneAction(const Date& dateEntree ,c
         }
     }
     return PrixU ;
-}
-void BourseSet::PasserALaJourneeSuivante()
-{
-    dateDuJour.passToNextDay() ;
-}
+}*/
+
 

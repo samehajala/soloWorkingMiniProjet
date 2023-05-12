@@ -58,7 +58,4 @@ float BourseVector::getPrixJournalierParDatePourUneAction(const Date& dateEntree
     }
     return PrixU ;
 }
-void BourseVector::PasserALaJourneeSuivante()
-{
-    dateDuJour.passToNextDay() ;
-}
+

@@ -1,58 +1,40 @@
 #include"BourseMultiMap.h"
+
 vector<string> BourseMultiMap::getActionsDisponibleParDate(const Date& dateEntree) const {
     vector<string> actions;
-    if(dateEntree>dateDuJour)
-    {
-        return actions ;
+    if(dateEntree > dateDuJour) {
+        return actions;
     }
-    for(auto const& element :Historique)
-    {
-        if((element.second).getDate()==dateEntree && ((element.second).getDate()<dateDuJour || (element.second).getDate()==dateDuJour) ){
-            actions.push_back((element.second).getNomAction()) ;
-
+    auto range = Historique.equal_range(dateEntree);
+    for (auto it = range.first; it != range.second; ++it) {
+        if ((it->second).getDate() <= dateDuJour) {
+            actions.push_back((it->second).getNomAction());
         }
     }
-
     return actions;
 }
-vector<PrixJournalier> BourseMultiMap::getPrixJournalierParDate(const Date& dateEntree) const  {
+vector<PrixJournalier> BourseMultiMap::getPrixJournalierParDate(const Date& dateEntree) const {
     vector<PrixJournalier> prixJournaliers;
-    if(dateEntree>dateDuJour)
-    {
-        return prixJournaliers ;
+    if(dateEntree>dateDuJour) {
+        return prixJournaliers;
     }
-    for (auto const& element :Historique) {
-        if ((element.second).getDate() == dateEntree) {
-            prixJournaliers.push_back(element.second);
-        }
+    auto range = Historique.equal_range(dateEntree);
+    for (auto it = range.first; it != range.second; ++it) {
+        prixJournaliers.push_back(it->second);
     }
     return prixJournaliers;
 }
-float BourseMultiMap::getPrixJournalierParDatePourUneAction(const Date& dateEntree ,const string& nomAction  ) const
-{
-    float PrixU=0.0;
-    vector<PrixJournalier> prixJournaliers;
-    for (auto const& element :Historique)
-    {
-        if ((element.second).getDate() == dateEntree)
-        {
-            prixJournaliers.push_back(element.second);
+float BourseMultiMap::getPrixJournalierParDatePourUneAction(const Date& dateEntree, const string& nomAction) const {
+    float prix = 0.0;
+    if (dateEntree > dateDuJour) {
+        return prix;
+    }
+    auto range = Historique.equal_range(dateEntree);
+    for (auto it = range.first; it != range.second; ++it) {
+        if ((it->second).getNomAction() == nomAction) {
+            prix = (it->second).getPrix();
+            break;
         }
     }
-    if(dateEntree>dateDuJour)
-    {
-        return PrixU ;
-    }
-    for(auto const& element :Historique)
-    {
-        if((element.second).getDate()==dateEntree && (element.second).getNomAction()==nomAction)
-        {
-            PrixU=(element.second).getPrix() ;
-        }
-    }
-    return PrixU ;
-}
-void BourseMultiMap::PasserALaJourneeSuivante()
-{
-    dateDuJour.passToNextDay() ;
+    return prix;
 }

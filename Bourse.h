@@ -16,7 +16,10 @@ public:
     virtual vector<string> getActionsDisponibleParDate( const Date& DateEntree ) const =0 ;
     virtual vector<PrixJournalier> getPrixJournalierParDate(const  Date& DateEntree ) const =0 ;
     virtual float getPrixJournalierParDatePourUneAction(const Date& DateEntree ,const string& nomAction  )const =0 ;
-    virtual void PasserALaJourneeSuivante()=0 ;
+    void PasserALaJourneeSuivante()
+    {
+        dateDuJour.passToNextDay() ;
+    }
 
 };
 

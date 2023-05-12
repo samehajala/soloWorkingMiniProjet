@@ -15,7 +15,7 @@ public:
     vector<string> getActionsDisponibleParDate(const Date& dateEntree) const override;
     vector<PrixJournalier> getPrixJournalierParDate(const Date& dateEntree) const override;
     float getPrixJournalierParDatePourUneAction(const Date& DateEntree ,const string& nomAction  ) const override ;
-    void PasserALaJourneeSuivante() override ;
+
 };
 
 #endif // BOURSESET_H_INCLUDED

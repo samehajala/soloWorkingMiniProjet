@@ -14,6 +14,7 @@ public:
     PrixJournalier(){}
     PrixJournalier(Date journee):date(journee) {}
     PrixJournalier(Date,string,float);
+    PrixJournalier(Date d,string nom):date(d),nomAction(nom) {}
     Date getDate() const  ;
     float getPrix() const  ;
     string  getNomAction() const  ;
