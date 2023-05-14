@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1684073075 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
+1684103213 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
 	<iostream>
 	"Date.h"
 	"PersistancePrixJournaliers.h"
@@ -24,7 +24,7 @@
 	<fstream>
 	<sstream>
 
-1684061679 c:\users\lenovo\documents\miniprojetbourse\date.h
+1684102830 c:\users\lenovo\documents\miniprojetbourse\date.h
 	<iostream>
 
 1684067655 source:c:\users\lenovo\documents\miniprojetbourse\portefeuille.cpp
@@ -101,7 +101,7 @@
 	<string>
 	<vector>
 
-1684073156 source:c:\users\lenovo\documents\miniprojetbourse\simulation.cpp
+1684087701 source:c:\users\lenovo\documents\miniprojetbourse\simulation.cpp
 	"Simulation.h"
 	<chrono>
 
@@ -122,7 +122,7 @@
 	"BourseSet.h"
 	<bits/stdc++.h>
 
-1684004761 c:\users\lenovo\documents\miniprojetbourse\bourseset.h
+1684100012 c:\users\lenovo\documents\miniprojetbourse\bourseset.h
 	<set>
 	<vector>
 	<string>
