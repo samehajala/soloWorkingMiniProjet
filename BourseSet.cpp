@@ -1,6 +1,7 @@
 #include"BourseSet.h"
 #include <bits/stdc++.h>
 vector<string> BourseSet::getActionsDisponibleParDate(const Date& dateEntree) const {
+
     vector<string> actions;
 
     if(dateEntree > dateDuJour) {
@@ -105,5 +106,35 @@ float BourseSet::getPrixJournalierParDatePourUneAction(const Date& dateEntree ,c
     }
     return PrixU ;
 }*/
+float BourseSet::getDernierPrixDuneAction(const Date& dateFinSimulation, const string& nomAction) const
+{
+    if (dateFinSimulation < Historique.begin()->getDate() || dateFinSimulation > Historique.rbegin()->getDate() || dateDuJour < dateFinSimulation)
+    {
 
+        return -1.0f;
+    }
 
+    float dernierPrix = -1.0f;
+    Date dateLimite = dateFinSimulation;
+    dateLimite.passToNextDay();
+    PrixJournalier p(dateFinSimulation, nomAction);
+
+    auto it = Historique.lower_bound(p);
+
+    if (it == Historique.end())
+    {
+
+        return -1.0f;
+    }
+
+    while (it != Historique.end() && it->getDate() < dateLimite)
+    {
+        if (it->getNomAction() == nomAction)
+        {
+            dernierPrix = it->getPrix();
+        }
+        ++it;
+    }
+
+    return dernierPrix;
+}

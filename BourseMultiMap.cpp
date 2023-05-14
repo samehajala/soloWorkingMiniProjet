@@ -38,3 +38,24 @@ float BourseMultiMap::getPrixJournalierParDatePourUneAction(const Date& dateEntr
     }
     return prix;
 }
+float BourseMultiMap::getDernierPrixDuneAction(const Date& dateFinSimulation, const string& nomAction) const
+{
+    auto lower = Historique.lower_bound(dateFinSimulation);
+    if (lower == Historique.end() || lower->first > dateFinSimulation || dateDuJour < dateFinSimulation)
+    {
+
+        return -1.0f;
+    }
+
+    float dernierPrix = -1.0f;
+    auto upper = Historique.upper_bound(dateFinSimulation);
+    for (auto it = lower; it != upper; ++it)
+    {
+        if (it->second.getNomAction() == nomAction)
+        {
+            dernierPrix = it->second.getPrix();
+        }
+    }
+
+    return dernierPrix;
+}

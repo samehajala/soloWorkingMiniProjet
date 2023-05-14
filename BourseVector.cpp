@@ -59,3 +59,52 @@ float BourseVector::getPrixJournalierParDatePourUneAction(const Date& dateEntree
     return PrixU ;
 }
 
+float BourseVector::getDernierPrixDuneAction(const Date& dateFinSimulation, const string& nomAction) const
+{
+    if (dateFinSimulation < Historique.begin()->getDate() || dateFinSimulation > Historique.rbegin()->getDate() || dateDuJour < dateFinSimulation)
+    {
+
+        return -1.0f;
+    }
+
+    float dernierPrix = -1.0f;
+    Date dateLimite = dateFinSimulation;
+    dateLimite.passToNextDay();
+    PrixJournalier p(dateFinSimulation, nomAction);
+
+    for (auto it = Historique.begin(); it != Historique.end(); ++it)
+    {
+        if (dateLimite<=it->getDate() )
+        {
+            break;
+        }
+
+        if (it->getNomAction() == nomAction)
+        {
+            dernierPrix = it->getPrix();
+        }
+    }
+
+    return dernierPrix;
+}
+
+
+/*float BourseVector::getDernierPrixDuneAction(const Date& dateFinSimulation ,const  string& nomAction) const
+{
+  if (dateFinSimulation<Historique.begin()->getDate()||Historique.rbegin()->getDate()<dateFinSimulation || (dateDuJour<dateFinSimulation))//if the searched date is lower/greater than the upper bound of the set or wants to see into the future return empty vector (out of search range)
+            return -1;
+    float dernierPrix=-1;
+    Date dateLimite(dateFinSimulation);
+    dateLimite.passToNextDay();
+    PrixJournalier p(dateFinSimulation,nomAction) ;
+    for (Date d=Historique.begin()->getDate(); d < dateLimite; ++d)
+    {
+         auto it=find(Historique.begin(),Historique.end(),p) ;
+         if (it!=Historique.end())
+        {
+            dernierPrix= it->getPrix();
+        }
+    }
+    return dernierPrix;
+
+}*/

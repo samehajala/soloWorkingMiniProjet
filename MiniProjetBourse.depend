@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683931418 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
+1684073075 source:c:\users\lenovo\documents\miniprojetbourse\main.cpp
 	<iostream>
 	"Date.h"
 	"PersistancePrixJournaliers.h"
@@ -24,26 +24,26 @@
 	<fstream>
 	<sstream>
 
-1683568209 c:\users\lenovo\documents\miniprojetbourse\date.h
+1684061679 c:\users\lenovo\documents\miniprojetbourse\date.h
 	<iostream>
 
-1683568674 source:c:\users\lenovo\documents\miniprojetbourse\portefeuille.cpp
+1684067655 source:c:\users\lenovo\documents\miniprojetbourse\portefeuille.cpp
 	"PorteFeuille.h"
 
 1683568209 c:\users\lenovo\documents\miniprojetbourse\portefeuille.h
 	"Titre.h"
 	<vector>
 
-1683568209 c:\users\lenovo\documents\miniprojetbourse\titre.h
+1684066352 c:\users\lenovo\documents\miniprojetbourse\titre.h
 	<string>
 
-1683568674 source:c:\users\lenovo\documents\miniprojetbourse\titre.cpp
+1684066475 source:c:\users\lenovo\documents\miniprojetbourse\titre.cpp
 	"Titre.h"
 
 1683568674 source:c:\users\lenovo\documents\miniprojetbourse\bourse.cpp
 	"Bourse.h"
 
-1683929611 c:\users\lenovo\documents\miniprojetbourse\bourse.h
+1684004699 c:\users\lenovo\documents\miniprojetbourse\bourse.h
 	"PrixJournalier.h"
 	"PersistancePrixJournaliers.h"
 	<vector>
@@ -60,14 +60,14 @@
 	<fstream>
 	"PrixJournalier.h"
 
-1683929611 source:c:\users\lenovo\documents\miniprojetbourse\boursevector.cpp
+1684064591 source:c:\users\lenovo\documents\miniprojetbourse\boursevector.cpp
 	<iostream>
 	<string>
 	<vector>
 	"BourseVector.h"
 	<fstream>
 
-1683929639 c:\users\lenovo\documents\miniprojetbourse\boursevector.h
+1684004761 c:\users\lenovo\documents\miniprojetbourse\boursevector.h
 	<vector>
 	<string>
 	"Bourse.h"
@@ -101,8 +101,9 @@
 	<string>
 	<vector>
 
-1683932154 source:c:\users\lenovo\documents\miniprojetbourse\simulation.cpp
+1684073156 source:c:\users\lenovo\documents\miniprojetbourse\simulation.cpp
 	"Simulation.h"
+	<chrono>
 
 1683568674 source:c:\users\lenovo\documents\miniprojetbourse\trader.cpp
 	"Trader.h"
@@ -117,20 +118,20 @@
 1683568672 source:c:\users\lenovo\documents\miniprojetbourse\transaction.cpp
 	"Transaction.h"
 
-1683929611 source:c:\users\lenovo\documents\miniprojetbourse\bourseset.cpp
+1684068916 source:c:\users\lenovo\documents\miniprojetbourse\bourseset.cpp
 	"BourseSet.h"
 	<bits/stdc++.h>
 
-1683929644 c:\users\lenovo\documents\miniprojetbourse\bourseset.h
+1684004761 c:\users\lenovo\documents\miniprojetbourse\bourseset.h
 	<set>
 	<vector>
 	<string>
 	"Bourse.h"
 
-1683929611 source:c:\users\lenovo\documents\miniprojetbourse\boursemultimap.cpp
+1684064591 source:c:\users\lenovo\documents\miniprojetbourse\boursemultimap.cpp
 	"BourseMultiMap.h"
 
-1683929631 c:\users\lenovo\documents\miniprojetbourse\boursemultimap.h
+1684004776 c:\users\lenovo\documents\miniprojetbourse\boursemultimap.h
 	"Bourse.h"
 	<map>
 
