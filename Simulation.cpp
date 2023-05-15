@@ -19,7 +19,7 @@ map<string , long> Simulation::executer(Bourse &bourse ,Trader& trader , Date da
     while(dateCourante<=dateFin)
     {
 
-        //cout<<dateCourante<<endl ;
+        cout<<dateCourante<<endl ;
         vector<string> actionsdisponiblesaujourdhui ;
         auto tStart = chrono::high_resolution_clock::now();
         actionsdisponiblesaujourdhui=bourse.getActionsDisponibleParDate(bourse.getDateCourante()) ;
@@ -122,6 +122,7 @@ map<string , long> Simulation::executer(Bourse &bourse ,Trader& trader , Date da
         maSimulation["nombreGetActionsDisponibleParDate"]=nombreGetActionsDisponibleParDate ;
         maSimulation["moyenneGetActionParDate"]=maSimulation["tempsGetActionsDisponibleParDate"]/nombreGetActionsDisponibleParDate ;
         maSimulation["nombreGetPrixParAction"]=nombreGetPrixParAction ;
+        // test
         cout<<"bonjour je fais les statistiquer"<<endl;
 return maSimulation ;
 }

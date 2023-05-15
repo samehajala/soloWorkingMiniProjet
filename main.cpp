@@ -12,6 +12,7 @@
 #include"BourseSet.h"
 #include"Simulation.h"
 #include"BourseMultiMap.h"
+#include"TraderAlgorithmique.h"
 #include<chrono>
 #include<set>
 using namespace std;
@@ -68,6 +69,7 @@ int main()
 
     PorteFeuille p ;
     TraderAleatoire TA ;
+    TraderAlgorithmique TrAlgo ;
     Transaction tx ;
     int df ;
         cout<<"donner le jour de fin de simulation"<<endl ;
@@ -81,12 +83,17 @@ int main()
         cin>>yf;
         Date d3(df,mf,yf);
     cout<<"Date fin simulation"<<d3<<endl ;
+    int choixTrader ;
+    cout<<"Choisir 1 pour TraderAleatoire ou 0 pour TraderAlgorithmique"<<endl ;
+    cin>>choixTrader ;
     map<string,long> statistiquesSimulation ;
 
 
     if(choix==1)
      {
-        statistiquesSimulation=Simulation::executer(bourseset,TA,d1,d3,1000) ;
+        if(choixTrader==0)
+        {
+            statistiquesSimulation=Simulation::executer(bourseset,TrAlgo,d1,d3,1000) ;
         cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
         cout<<"le gain est "<<statistiquesSimulation["solde"]-1000<<endl ;
         cout<<"Le nombre de getaction est \t"<<statistiquesSimulation["nombreGetActionsDisponibleParDate"]<<endl ;
@@ -100,10 +107,30 @@ int main()
         cout<<"moyenne de getAction est \t"<<statistiquesSimulation["moyenneGetActionParDate"]<<endl ;
         cout<<"nombre GetPrixParAction\t"<<statistiquesSimulation["nombreGetPrixParAction"]<<endl ;
         cout<<"temps GetPrixParAction\t"<<statistiquesSimulation["tempsGetPrixParAction"]<<endl ;
+        }
+        else if (choixTrader==1){
+            statistiquesSimulation=Simulation::executer(bourseset,TrAlgo,d1,d3,1000) ;
+        cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
+        cout<<"le gain est "<<statistiquesSimulation["solde"]-1000<<endl ;
+        cout<<"Le nombre de getaction est \t"<<statistiquesSimulation["nombreGetActionsDisponibleParDate"]<<endl ;
+        cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
+        cout<<"le temps des transaction est \t"<<statistiquesSimulation["tempsTransactionParJour"]<<endl  ;
+        cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;
+        cout<<"Le nombre des actions qui ont echouees est:\t"<<statistiquesSimulation["NombreDesTransactionEchouees"]<<endl ;
+        cout<<"Le nombre des actions Vendre est:\t"<<statistiquesSimulation["NombreDesTransactionVendre"]<<endl ;
+        cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;
+        cout<<"temps de getAction est \t"<<statistiquesSimulation["tempsGetActionsDisponibleParDate"]<<endl ;
+        cout<<"moyenne de getAction est \t"<<statistiquesSimulation["moyenneGetActionParDate"]<<endl ;
+        cout<<"nombre GetPrixParAction\t"<<statistiquesSimulation["nombreGetPrixParAction"]<<endl ;
+        cout<<"temps GetPrixParAction\t"<<statistiquesSimulation["tempsGetPrixParAction"]<<endl ;
+        }
+
      }
     else if (choix==2)
     {
-        statistiquesSimulation=Simulation::executer(bourse,TA,d1,d3,1000) ;
+       if(choixTrader==0)
+        {
+            statistiquesSimulation=Simulation::executer(bourseset,TrAlgo,d1,d3,1000) ;
         cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
         cout<<"le gain est "<<statistiquesSimulation["solde"]-1000<<endl ;
         cout<<"Le nombre de getaction est \t"<<statistiquesSimulation["nombreGetActionsDisponibleParDate"]<<endl ;
@@ -117,10 +144,29 @@ int main()
         cout<<"moyenne de getAction est \t"<<statistiquesSimulation["moyenneGetActionParDate"]<<endl ;
         cout<<"nombre GetPrixParAction\t"<<statistiquesSimulation["nombreGetPrixParAction"]<<endl ;
         cout<<"temps GetPrixParAction\t"<<statistiquesSimulation["tempsGetPrixParAction"]<<endl ;
+        }
+        else if (choixTrader==1){
+            statistiquesSimulation=Simulation::executer(bourseset,TrAlgo,d1,d3,1000) ;
+        cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
+        cout<<"le gain est "<<statistiquesSimulation["solde"]-1000<<endl ;
+        cout<<"Le nombre de getaction est \t"<<statistiquesSimulation["nombreGetActionsDisponibleParDate"]<<endl ;
+        cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
+        cout<<"le temps des transaction est \t"<<statistiquesSimulation["tempsTransactionParJour"]<<endl  ;
+        cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;
+        cout<<"Le nombre des actions qui ont echouees est:\t"<<statistiquesSimulation["NombreDesTransactionEchouees"]<<endl ;
+        cout<<"Le nombre des actions Vendre est:\t"<<statistiquesSimulation["NombreDesTransactionVendre"]<<endl ;
+        cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;
+        cout<<"temps de getAction est \t"<<statistiquesSimulation["tempsGetActionsDisponibleParDate"]<<endl ;
+        cout<<"moyenne de getAction est \t"<<statistiquesSimulation["moyenneGetActionParDate"]<<endl ;
+        cout<<"nombre GetPrixParAction\t"<<statistiquesSimulation["nombreGetPrixParAction"]<<endl ;
+        cout<<"temps GetPrixParAction\t"<<statistiquesSimulation["tempsGetPrixParAction"]<<endl ;
+        }
     }
     else if (choix==3)
     {
-        statistiquesSimulation=Simulation::executer(bourseMultiMap,TA,d1,d3,1000) ;
+        if(choixTrader==0)
+        {
+            statistiquesSimulation=Simulation::executer(bourseset,TrAlgo,d1,d3,1000) ;
         cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
         cout<<"le gain est "<<statistiquesSimulation["solde"]-1000<<endl ;
         cout<<"Le nombre de getaction est \t"<<statistiquesSimulation["nombreGetActionsDisponibleParDate"]<<endl ;
@@ -134,10 +180,28 @@ int main()
         cout<<"moyenne de getAction est \t"<<statistiquesSimulation["moyenneGetActionParDate"]<<endl ;
         cout<<"nombre GetPrixParAction\t"<<statistiquesSimulation["nombreGetPrixParAction"]<<endl ;
         cout<<"temps GetPrixParAction\t"<<statistiquesSimulation["tempsGetPrixParAction"]<<endl ;
+        }
+        else if (choixTrader==1){
+            statistiquesSimulation=Simulation::executer(bourseset,TrAlgo,d1,d3,1000) ;
+        cout<<"on a fini la Simulation avec succes et voici les statistiques "<<endl ;
+        cout<<"le gain est "<<statistiquesSimulation["solde"]-1000<<endl ;
+        cout<<"Le nombre de getaction est \t"<<statistiquesSimulation["nombreGetActionsDisponibleParDate"]<<endl ;
+        cout<<"Le nombre total des transactions est:\t"<<statistiquesSimulation["nombre Des Transactions Totales"]<<endl ;
+        cout<<"le temps des transaction est \t"<<statistiquesSimulation["tempsTransactionParJour"]<<endl  ;
+        cout<<"Le nombre des actions acheter est:\t"<<statistiquesSimulation["NombreDesTransactionAcheter"]<<endl ;
+        cout<<"Le nombre des actions qui ont echouees est:\t"<<statistiquesSimulation["NombreDesTransactionEchouees"]<<endl ;
+        cout<<"Le nombre des actions Vendre est:\t"<<statistiquesSimulation["NombreDesTransactionVendre"]<<endl ;
+        cout<<"Le solde final est:\t"<<statistiquesSimulation["solde"]<<endl ;
+        cout<<"temps de getAction est \t"<<statistiquesSimulation["tempsGetActionsDisponibleParDate"]<<endl ;
+        cout<<"moyenne de getAction est \t"<<statistiquesSimulation["moyenneGetActionParDate"]<<endl ;
+        cout<<"nombre GetPrixParAction\t"<<statistiquesSimulation["nombreGetPrixParAction"]<<endl ;
+        cout<<"temps GetPrixParAction\t"<<statistiquesSimulation["tempsGetPrixParAction"]<<endl ;
+        }
     }
     else
     {
         quiter=true ;
+
     }
     auto tEnd = chrono::high_resolution_clock::now();
     double temps_ecoule = chrono::duration<double, milli>(tEnd - tStart).count();
